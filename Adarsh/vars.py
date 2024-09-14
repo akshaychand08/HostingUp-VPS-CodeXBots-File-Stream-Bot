@@ -32,6 +32,7 @@ class Var(object):
         ON_HEROKU = False
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL', False))
+    HAS_SSL = False
     FQDN = 'bots.hostingup.icu:9097' #(Here, enter the domain and hosting port you received from HostingUp. If you're using your own, enter that, but make sure to use the domain name, not the IP address, and include the port as well.)
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
